@@ -266,3 +266,6 @@ You can use `bash scripts/evaluation/OpenThinker3-1.5B/eval_BENCHMARKS.sh` to ev
 bash scripts/evaluation/OpenThinker3-1.5B/eval_BENCHMARKS.sh "../[OpenThinker3-1.5B]_[num-environment=400]/iter_0000016"
 bash scripts/evaluation/OpenThinker3-1.5B/eval_LiveCodeBench.sh "../[OpenThinker3-1.5B]_[num-environment=400]/iter_0000016"
 ```
+
+## RLVE on Tinker
+First run `cd tinker-cookbook` to enter the directory, and then check out the [README](https://github.com/Zhiyuan-Zeng/RLVE/blob/main/tinker-cookbook/tinker_cookbook/recipes/rlve/README.md) for details on installation and usage of RLVE recipe.
