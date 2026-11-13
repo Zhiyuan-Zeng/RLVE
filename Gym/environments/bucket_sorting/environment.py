@@ -65,10 +65,12 @@ Please find the number that appears **most frequently** in the array. If there a
     def scorer(self, output : str) -> float :
         processed_result = self.processor(output)
         if processed_result is not None :
-            if processed_result not in self.parameter["value2count"] :
+            # JSON turns the integer keys of value2count into strings
+            value2count = {int(value) : count for value, count in self.parameter["value2count"].items()}
+            if processed_result not in value2count :
                 return self.rewards["invalid_answer"]
             
-            if self.parameter["value2count"][processed_result] == max(self.parameter["value2count"].values()) :
+            if value2count[processed_result] == max(value2count.values()) :
                 return self.rewards["correct_answer"]
             else :
                 return self.rewards["wrong_answer"]
