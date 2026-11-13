@@ -40,6 +40,8 @@ The matrix is given as follows:
         M = self.parameter["M"] = random.randint(2, MAX_N_M)
 
         dirs = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        # Search state of this call. As module globals, it was shared with a generator thread left running after a timeout.
+        visited, order, path = None, None, None
 
         def is_inside(x, y):
             return 0 <= x < N and 0 <= y < M
@@ -106,7 +108,7 @@ The matrix is given as follows:
             return False
 
         def generate_random_hamiltonian_path():
-            global visited, order, path
+            nonlocal visited, order, path
             while True:
                 sx = random.randint(0, N - 1)
                 sy = random.randint(0, M - 1)
