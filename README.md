@@ -103,6 +103,8 @@ The reward for a model output `output` is given by `problem.scorer(output)`, or 
 
 You can check [here](Gym/environment.py) for more detailed usage.
 
+Tests for the environments are in [Gym/tests](Gym/tests); run them with `python -m pytest Gym/tests`.
+
 ## Model Download & Weight Conversion
 
 In the following, we assume you are on a node with 8 GPUs, each equipped with at least 80GB of memory.
