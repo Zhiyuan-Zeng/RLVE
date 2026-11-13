@@ -158,6 +158,8 @@ Please assign an item price for each shop to **maximize the total money earned**
 
             if len(processed_result) != self.parameter["N"] :
                 return self.rewards["invalid_solution"]
+            if any(price < 0 for price in processed_result) :
+                return self.rewards["invalid_solution"]
             P = [None] + processed_result
 
             answer, gold = 0, self.parameter["gold_answer"]
